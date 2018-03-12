@@ -6,14 +6,6 @@
     <%
     LibroModelo libroModelo = new LibroModelo();
     ArrayList<Libro> libros = libroModelo.selectAll();
-   
-    
-    
-    
-    
-    
-    
-    
     %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -32,6 +24,7 @@
 	<tr><th>Titulo</th><th>Autor</th></tr>
 </thead>
 <tbody>
+
 <%
 Iterator<Libro> i = libros.iterator();
 Libro libro;
@@ -40,6 +33,7 @@ while(i.hasNext()){
 	out.print("<tr><td>"  +libro.getTitulo()+ "</td><td>" + libro.getAutor() + "</td></tr>");
 }
 %>
+
 </tbody>
 </table>
 
