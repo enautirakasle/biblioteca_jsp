@@ -18,24 +18,34 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<h1>Listado de Libros</h1>
-<table class="table table-striped">
-<thead class="thead-dark">
-	<tr><th>Titulo</th><th>Autor</th></tr>
-</thead>
-<tbody>
-
-<%
-Iterator<Libro> i = libros.iterator();
-Libro libro;
-while(i.hasNext()){
-	libro = i.next();
-	out.print("<tr><td>"  +libro.getTitulo()+ "</td><td>" + libro.getAutor() + "</td></tr>");
-}
-%>
-
-</tbody>
-</table>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Listado de Libros</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr><th>Titulo</th><th>Autor</th></tr>
+			</thead>
+			<tbody>
+			
+			<%
+			Iterator<Libro> i = libros.iterator();
+			Libro libro;
+			while(i.hasNext()){
+				libro = i.next();
+				out.print("<tr><td>"  +libro.getTitulo()+ "</td><td>" + libro.getAutor() + "</td><td><a href='ver.jsp?id=" + libro.getId() + "'>ver</a></td></tr>");
+			}
+			%>
+			
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
