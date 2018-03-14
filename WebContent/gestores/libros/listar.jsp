@@ -24,7 +24,7 @@
 			<h1>Listado de Libros</h1>
 		</div>
 		<div class="col">
-			<a href="crearLibro.jsp">Añadir libro</a>
+			<a class="btn btn-primary" href="crearLibro.jsp">Añadir libro</a>
 		</div>
 	</div>
 	<div class="row">
