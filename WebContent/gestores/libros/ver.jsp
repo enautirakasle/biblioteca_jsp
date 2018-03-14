@@ -26,8 +26,14 @@ Libro libro = libroModelo.select(id);
 			<tr><td>Titulo:</td><td><%=libro.getTitulo()%></td></tr>
 			<tr><td>Autor:</td><td><%=libro.getAutor()%></td></tr>
 		</table>
-		</div>
 	</div>
+	</div>
+	<div class="row">
+	<div class="col">
+		<a href="listar.jsp">Listar libros</a>
+	</div>
+	</div>
+	
 </div>
 
 
