@@ -23,6 +23,9 @@
 		<div class="col">
 			<h1>Listado de Libros</h1>
 		</div>
+		<div class="col">
+			<a href="crearLibro.jsp">Añadir libro</a>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col">
@@ -37,10 +40,22 @@
 			Libro libro;
 			while(i.hasNext()){
 				libro = i.next();
-				out.print("<tr><td>"  +libro.getTitulo()+ "</td><td>" + libro.getAutor() + "</td><td><a href='ver.jsp?id=" + libro.getId() + "'>ver</a></td></tr>");
-			}
+				%>
+				<tr>
+					<td>
+						<%=libro.getTitulo()%>
+					</td>
+					<td>
+						<%=libro.getAutor()%>
+					</td>
+					<td>
+						<a href="ver.jsp?id=<%=libro.getId()%>">ver</a>
+					</td>
+				</tr>
+				<%
+			}//fin while
 			%>
-			
+
 			</tbody>
 			</table>
 		</div>
