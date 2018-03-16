@@ -28,7 +28,7 @@
 <div class="container">
 			<div class="row">
 				<div class="col">
-					<form action="#" method="post">
+					<form action="#" method="post" enctype="multipart/form-data">>
 						<table>
 						<thead>
 						<tr><th></th><th></th></tr>
@@ -36,6 +36,7 @@
 						<tbody>
 						<tr><td>Titulo</td><td><input type="text" name="titulo"/></td></tr>
 						<tr><td>Autor</td><td><input type="text" name="autor"/></td></tr>
+						<tr><td>Foto</td><td><input type="file" name="foto"/></td></tr>
 						<tr><td></td><td><input type="submit" name="guardar" value="guardar"/></td></tr>
 						</tbody>
 						</table>
