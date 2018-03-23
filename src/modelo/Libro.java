@@ -1,6 +1,7 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Libro {
 	private int id;
@@ -31,5 +32,53 @@ public class Libro {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
+	
+	public ArrayList<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+
+	public void setPrestamos(ArrayList<Prestamo> prestamos) {
+		this.prestamos = prestamos;
+	}
+
+	public boolean estaPrestado(){
+		Iterator<Prestamo> i = this.prestamos.iterator();
+		Prestamo prestamo;
+		
+		while(i.hasNext()){
+			prestamo = i.next();
+			if(!prestamo.isEntregado()){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean estaDisponible(){
+		Iterator<Prestamo> i = this.prestamos.iterator();
+		Prestamo prestamo;
+		
+		while(i.hasNext()){
+			prestamo = i.next();
+			if(!prestamo.isEntregado()){
+				
+				return false;
+			}
+		}
+		//todos los prestamos estan entregados
+		return true;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

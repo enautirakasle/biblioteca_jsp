@@ -29,7 +29,7 @@
 	</div>
 	<div class="row">
 		<div class="col">
-			<table class="table table-striped">
+			<table class="table">
 			<thead class="thead-dark">
 				<tr><th>Titulo</th><th>Autor</th></tr>
 			</thead>
@@ -40,8 +40,13 @@
 			Libro libro;
 			while(i.hasNext()){
 				libro = i.next();
+				if(libro.estaDisponible()){
+					out.print("<tr class='table-success'>");
+				}else{
+					out.print("<tr class='table-danger'>");
+				}
 				%>
-				<tr>
+
 					<td>
 						<%=libro.getTitulo()%>
 					</td>
