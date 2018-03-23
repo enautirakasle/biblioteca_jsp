@@ -38,15 +38,20 @@
 			<%
 			Iterator<Libro> i = libros.iterator();
 			Libro libro;
+			PrestamoModelo  prestamoModelo = new PrestamoModelo();
+			
 			while(i.hasNext()){
 				libro = i.next();
-				if(libro.estaDisponible()){
-					out.print("<tr class='table-success'>");
+				String clase;
+				if(prestamoModelo.estaDisponible(libro)){
+					clase = "table-success";
+					//out.print("<tr class='table-success'>");
 				}else{
-					out.print("<tr class='table-danger'>");
+					clase = "table-danger";
+					//out.print("<tr class='table-danger'>");
 				}
 				%>
-
+				<tr class="<%=clase%>">
 					<td>
 						<%=libro.getTitulo()%>
 					</td>
