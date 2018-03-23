@@ -28,7 +28,7 @@
 <div class="container">
 			<div class="row">
 				<div class="col">
-					<form action="#" method="post" enctype="multipart/form-data">>
+					<form action="#" method="post" enctype="multipart/form-data">
 						<table>
 						<thead>
 						<tr><th></th><th></th></tr>
