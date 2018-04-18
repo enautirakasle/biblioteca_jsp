@@ -251,5 +251,61 @@ public class UsuarioModelo extends Conector {
 		return null;
 
 	}
+	
+	//devuelve un usuario que  tenga ese dni y contrasena
+	//si no devuelve null
+	//se utiliza principalmente para loguearse
+	public Usuario get(String dni, String contrasena){
+		PreparedStatement pst;
+		try {
+			pst = super.conexion.prepareStatement("select * from usuarios where dni = ? and contrasena=?");
+			pst.setString(1, dni);
+			pst.setString(2, contrasena);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()){
+				Usuario usuario = new Usuario();
+				usuario.setNombre(rs.getString("nombre"));
+				usuario.setApellido(rs.getString("apellido"));
+				usuario.setDni(rs.getString("dni"));
+				usuario.setFechaNacimiento(new java.util.Date(rs.getDate("fecha_nacimiento").getTime()));
+				usuario.setEdad(rs.getInt("edad"));
+				usuario.setRol(rs.getString("rol"));
+				return usuario;
+			}else{
+				return null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

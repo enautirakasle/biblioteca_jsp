@@ -11,10 +11,22 @@ public class Usuario {
 	private int edad;
 	private String dni;
 	private Date fechaNacimiento;
+	private String password;
+	private String rol;
 	
+	public static final  String USUARIO = "usuario";
+	public static final String ADMIN = "admin";
+
 	private ArrayList<Prestamo> prestamos;
 	
 	//metodos
+	
+	public boolean esAdmin(){
+		return this.rol.equals(ADMIN);
+	}
+	public boolean esUsuario(){
+		return this.rol.equals(USUARIO);
+	}
 	public ArrayList<Prestamo> getPrestamos() {
 		return prestamos;
 	}
@@ -58,6 +70,17 @@ public class Usuario {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRol() {
+		return rol;
+	}
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
 	
 }
